@@ -1,14 +1,14 @@
 'use strict';
 
-let num = 266219;
+const num = 266219;
 
-let arr = num.toString().split('');
+const arr = num.toString().split('');
 let result = 1;
 
-for (let i = 0; i < arr.length; i++) {
-
+arr.forEach(function (item, i, arr) {
    result *= arr[i];
-}
+});
+
 console.log(result);
 
 result **= 3;
