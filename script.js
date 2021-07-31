@@ -3,11 +3,8 @@
 const num = 266219;
 
 const arr = num.toString().split('');
-let result = 1;
 
-arr.forEach(function (item, i, arr) {
-   result *= arr[i];
-});
+let result = arr.reduce((pro, current) => pro *= current, 1);
 
 console.log(result);
 
