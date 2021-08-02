@@ -1,15 +1,39 @@
 'use strict';
 
-const num = 266219;
+// Задача №1
+const lang = 'ru';
+const arrRu = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+const arrEn = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const arr = {
+   ru: arrRu,
+   en: arrEn,
+};
 
-const arr = num.toString().split('');
+if (lang === 'ru') {
+   console.log(arrRu);
+} else if (lang === 'en') {
+   console.log(arrEn);
+} else {
+   console.log('Язык не определён');
+}
 
-let result = arr.reduce((pro, current) => pro *= current, 1);
+switch (lang) {
+   case 'ru':
+      console.log(arrRu);
+      break;
+   case 'en':
+      console.log(arrEn);
+      break;
+   default:
+      console.log('Язык не определён');
+}
 
-console.log(result);
+console.log(arr[lang]);
 
-result **= 3;
-console.log(result);
+//Задача №2
 
-result = result.toString();
-console.log(+(result.substring(0, 2)));
+let namePerson = 'Артем';
+
+namePerson = namePerson === 'Артем' ? console.log('директор') :
+   namePerson === 'Максим' ? console.log('преподаватель') :
+      console.log('студент');
