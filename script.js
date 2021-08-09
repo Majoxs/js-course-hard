@@ -1,39 +1,21 @@
 'use strict';
 
-// Задача №1
-const lang = 'ru';
-const arrRu = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-const arrEn = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-const arr = {
-   ru: arrRu,
-   en: arrEn,
-};
+let str = prompt('Введите произвольную строку!');
 
-if (lang === 'ru') {
-   console.log(arrRu);
-} else if (lang === 'en') {
-   console.log(arrEn);
-} else {
-   console.log('Язык не определён');
+function foo(arg) {
+
+   while (typeof arg !== 'string' || typeof arg === null || arg === '') {
+      alert('Это не строка!');
+      arg = prompt('Введите произвольную строку');
+   };
+   arg = arg.trim();
+   if (arg.length > 30) {
+      let newStr = arg.slice(0, 30).padEnd(33, '...');
+      alert(newStr);
+   } else {
+      alert(arg);
+   }
+   console.log(arg);
 }
 
-switch (lang) {
-   case 'ru':
-      console.log(arrRu);
-      break;
-   case 'en':
-      console.log(arrEn);
-      break;
-   default:
-      console.log('Язык не определён');
-}
-
-console.log(arr[lang]);
-
-//Задача №2
-
-let namePerson = 'Артем';
-
-namePerson = namePerson === 'Артем' ? console.log('директор') :
-   namePerson === 'Максим' ? console.log('преподаватель') :
-      console.log('студент');
+foo(str);
